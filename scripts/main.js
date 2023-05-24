@@ -5,7 +5,7 @@ canvas.style.background = "darkolivegreen"
 ctx = canvas.getContext('2d')
 
 let ballx=150,bally=75,ballrad=2
-let ballvx=1,ballvy=1
+let ballvx=4,ballvy=8
 let boxx=0,boxy=0,box_tamx=300,box_tamy=150
 let boxboundR=box_tamx+boxx-ballrad
 let boxboundB=box_tamy+boxy-ballrad
@@ -27,7 +27,7 @@ ctx.strokeRect(boxx,boxy,box_tamx,box_tamy)
 
 function init(){
     move_ball()
-    setInterval(move_ball,100)
+    setInterval(move_ball,50)
 }
 
 function move_ball(){
@@ -39,7 +39,6 @@ function move_ball(){
     ctx.strokeRect(boxx,boxy,box_tamx,box_tamy)
 }
 
-//Falta só despiorar a lógica dessa função função.
 function move_and_check(){
     let not_ballx = ballx + ballvx
     let not_bally = bally + ballvy
@@ -47,7 +46,7 @@ function move_and_check(){
         ballvx = -ballvx
         not_ballx = boxboundR
     }
-    if(not_ballx > boxboundL){
+    if(not_ballx < boxboundL){
         ballvx = -ballvx
         not_ballx = boxboundL
     }
@@ -55,7 +54,7 @@ function move_and_check(){
         ballvy = -ballvy
         not_bally = boxboundB
     }
-    if(not_bally > boxboundT){
+    if(not_bally < boxboundT){
         ballvy = -ballvy
         not_bally = boxboundT
     }
