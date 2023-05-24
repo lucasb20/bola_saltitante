@@ -1,5 +1,5 @@
 # bola_saltitante
- Um jogo de bolas saltitando (sem braba).
+ Um jogo de bola saltitando.
 
 Produzido por Lucas Rocha.
 
